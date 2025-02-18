@@ -5,7 +5,7 @@
   <title>Quiz Sécurité Incendie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Couleur pour Android (Chrome) -->
-  <meta name="theme-color" content="#BBBBBB">
+  <meta name="theme-color" content="#00d4ff">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Préchargement de quelques images critiques -->
   <link rel="preload" as="image" href="images/wall.png">
@@ -29,46 +29,44 @@
   <link rel="preload" as="image" href="images/lose2.gig">
   
   <style>
-
-    /* Animations */
-	 @keyframes victoryAnimation {
-        0% { transform: scale(1) rotate(0deg); }
-        20% { transform: scale(1.1) rotate(3deg); }
-        40% { transform: scale(1) rotate(-3deg); }
-        60% { transform: scale(1.1) rotate(3deg); }
-        80% { transform: scale(1) rotate(-3deg); }
-        90% { transform: scale(1) rotate(0deg); }
-        100% { transform: scale(1) rotate(0deg); }
-      }
-      .victory-animation {
-        animation: victoryAnimation 2s ease-in-out infinite;
-        transform-origin: center;
-      }
-	@keyframes windmillShake {
-  0% { transform: rotate(0deg); }
-  15% { transform: rotate(15deg); }
-  30% { transform: rotate(-15deg); }
-  45% { transform: rotate(10deg); }
-  60% { transform: rotate(-10deg); }
-  75% { transform: rotate(5deg); }
-  90% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.windmill-shake {
-  animation: windmillShake 0.8s ease-in-out forwards !important;
-  transform-origin: center;
-}
-	 @keyframes levitateLeft {
-        0%   { transform: translate(40px, 0px); }
-        50%  { transform: translate(40px, -10px); } /* monte de 10px */
-        100% { transform: translate(40px, 0px); }
-      }
-      @keyframes levitateRight {
-        0%   { transform: translate(-40px, 0px); }
-        50%  { transform: translate(-40px, -10px); } /* monte de 10px */
-        100% { transform: translate(-40px, 0px); }
-      }
+    /* Vos styles existants restent inchangés */
+    @keyframes victoryAnimation {
+      0% { transform: scale(1) rotate(0deg); }
+      20% { transform: scale(1.1) rotate(3deg); }
+      40% { transform: scale(1) rotate(-3deg); }
+      60% { transform: scale(1.1) rotate(3deg); }
+      80% { transform: scale(1) rotate(-3deg); }
+      90% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    .victory-animation {
+      animation: victoryAnimation 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+    @keyframes windmillShake {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(15deg); }
+      30% { transform: rotate(-15deg); }
+      45% { transform: rotate(10deg); }
+      60% { transform: rotate(-10deg); }
+      75% { transform: rotate(5deg); }
+      90% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .windmill-shake {
+      animation: windmillShake 0.8s ease-in-out forwards !important;
+      transform-origin: center;
+    }
+    @keyframes levitateLeft {
+      0%   { transform: translate(40px, 0px); }
+      50%  { transform: translate(40px, -10px); }
+      100% { transform: translate(40px, 0px); }
+    }
+    @keyframes levitateRight {
+      0%   { transform: translate(-40px, 0px); }
+      50%  { transform: translate(-40px, -10px); }
+      100% { transform: translate(-40px, 0px); }
+    }
     @keyframes shake {
       0% { transform: translate(0, 0); }
       10% { transform: translate(-10px, -10px); }
@@ -114,7 +112,6 @@
       50%  { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
-    /* Appliquer l'animation au titre */
     .floating-title {
       position: relative;
       z-index: 3;
@@ -124,24 +121,18 @@
       max-width: 90%;
       width: auto;
     }
-    /* Pour centrer l'image décorative */
-
-.pikachu {
-  display: block;
-  margin: 0 auto;
-  transform: translateY(19px)!important;
-    transform: translateX(-3px);
-  width: 210px !important;
-  height: 192px !important;
-
-
-}
-    /* Centrage général des images de résultat */
+    .pikachu {
+      display: block;
+      margin: 0 auto;
+      transform: translateY(19px)!important;
+      transform: translateX(-3px);
+      width: 210px !important;
+      height: 192px !important;
+    }
     #result-header {
       display: block;
       margin: 0 auto 20px;
     }
-    /* Styles généraux */
     html, body {
       height: 100%;
       margin: 0;
@@ -174,6 +165,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transform: translateY(30px);
       width: 140px;
       height: 80px;
       margin: 20px auto;
@@ -187,13 +179,12 @@
       border-radius: 10px;
       text-shadow: 1px 1px 2px black;
       transition: transform 0.1s ease-in-out;
-      animation: borderGlow 2s ease-in-out infinite;
       position: relative;
       top: 25px;
       overflow: visible;
     }
     #start-btn:active {
-      transform: scale(0.95);
+      transform: translateY(30px) scale(0.95);
       animation: glow-green 1.5s infinite ease-in-out, blink 0.3s infinite ease-in-out;
     }
     #start-btn img {
@@ -204,6 +195,28 @@
       width: 140px;
       height: auto;
       pointer-events: none;
+    }
+    /* Bouton INDEX pour page d'accueil – petit et placé sous le bouton commencer */
+    #home-index-btn {
+      width: 80px;
+      height: 40px;
+      transform: translateY(-220px);
+      font-size: 14px;
+      margin: 0px auto;
+      display: block;
+      cursor: pointer;
+      background: linear-gradient(to top, black, gray);
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      border-radius: 10px;
+      text-shadow: 1px 1px 2px black;
+      transition: transform 0.1s ease-in-out;
+       animation: borderGlow 2s ease-in-out infinite;
+
+    }
+    #home-index-btn:active {
+transform: translateY(-220px) scale(0.95);
     }
     /* Zone du quiz */
     #quiz-container {
@@ -313,10 +326,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-	  margin-top: -30px;
+      margin-top: -30px;
     }
     .correct-decoration { width: 60px; }
-    /* Pour l'image de bonne réponse, largeur de 80px adaptée aux GIFs */
     .correct-container .result-image.correct {
       animation: popAnimation 0.5s ease-out;
       width: 80px;
@@ -333,7 +345,7 @@
       background: linear-gradient(135deg, #2196F3, #0D47A1);
       display: none; 
       position: relative;
-	  border: 3px solid white;
+      border: 3px solid white;
     }
     #result-page h2 { font-size: 24px; margin-bottom: 20px; }
     #final-score {
@@ -365,65 +377,133 @@
       position: relative;
       overflow: visible;
       animation: borderGlow2 2s ease-in-out infinite;
-       z-index: 6; 
+      z-index: 6; 
     }
     #restart-btn:active { transform: scale(0.95); }
-	 .incorrect-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-		margin-top: -40px;
-      }
-	  .decor-leftX, .decor-rightX {
-  width: 80px;
-  padding: 12px 0;
-}
- .decor-rightX {
-        width: 80px;
-        transform: translate(-30px, 3px);
-        z-index: 0;
-        padding: 12px 0px;
-		 animation: levitateRightX 1s ease-in-out infinite;
-      }
-      .decor-leftX {
-        width: 80px;
-        transform: translate(30px, 3px);
-        z-index: 0;
-        padding: 12px 0px;
-		 animation: levitateLeftX 1s ease-in-out infinite;
-      }
-	  .decor-right {
-  width: 80px;
-  transform: translate(-40px, -10px);
-  z-index: 0;
-  padding: 12px 0px;
-
-}
-.decor-left {
-  width: 80px;
-  transform: translate(40px, -10px);
-  z-index: 0;
-  padding: 12px 0px;
-
-}
-@keyframes levitateLeftX {
-  0%   { transform: translate(40px, 3px); }
-  50%  { transform: translate(40px, 13px); }
-  100% { transform: translate(40px, 3px); }
-}
-@keyframes levitateRightX {
-  0%   { transform: translate(-40px, 3px); }
-  50%  { transform: translate(-40px, 13px); }
-  100% { transform: translate(-40px, 3px); }
-}
-    /* Media Query pour mobile */
+    /* Bouton INDEX sur la page de résultats – même style petit */
+    #result-index-btn {
+      width: 80px;
+      height: 40px;
+      font-size: 14px;
+      margin: 10px auto 0;
+      display: block;
+      cursor: pointer;
+      background: linear-gradient(to top, black, gray);
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      border-radius: 10px;
+      text-shadow: 1px 1px 2px black;
+      transition: transform 0.1s ease-in-out;
+      animation: borderGlow 2s ease-in-out infinite;
+    }
+    #result-index-btn:active {
+      transform: scale(0.95);
+    }
+    .incorrect-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -40px;
+    }
+    .decor-leftX, .decor-rightX {
+      width: 80px;
+      padding: 12px 0;
+    }
+    .decor-rightX {
+      width: 80px;
+      transform: translate(-30px, 3px);
+      z-index: 0;
+      padding: 12px 0px;
+      animation: levitateRightX 1s ease-in-out infinite;
+    }
+    .decor-leftX {
+      width: 80px;
+      transform: translate(30px, 3px);
+      z-index: 0;
+      padding: 12px 0px;
+      animation: levitateLeftX 1s ease-in-out infinite;
+    }
+    .decor-right {
+      width: 80px;
+      transform: translate(-40px, -10px);
+      z-index: 0;
+      padding: 12px 0px;
+    }
+    .decor-left {
+      width: 80px;
+      transform: translate(40px, -10px);
+      z-index: 0;
+      padding: 12px 0px;
+    }
+    @keyframes levitateLeftX {
+      0%   { transform: translate(40px, 3px); }
+      50%  { transform: translate(40px, 13px); }
+      100% { transform: translate(40px, 3px); }
+    }
+    @keyframes levitateRightX {
+      0%   { transform: translate(-40px, 3px); }
+      50%  { transform: translate(-40px, 13px); }
+      100% { transform: translate(-40px, 3px); }
+    }
+    .centipod {
+      display: block;
+      margin: 0 auto;
+    }
+    .vidget {
+      display: block;
+      margin: 0 auto;
+    }
+    /* ======= Styles pour le modal INDEX ======= */
+    #index-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
+      z-index: 1000;
+      text-align: center;
+      width: 300px;
+      max-width: 80%;
+    }
+    #index-modal .index-option {
+      width: 60px;
+      height: 60px;
+      margin: 0 10px;
+      font-size: 18px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: linear-gradient(to top, black, gray);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.1s ease-in-out;
+    }
+    #index-modal .index-option:active {
+      transform: scale(0.95);
+    }
+    #index-modal #close-index-modal {
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background: linear-gradient(to top, black, gray);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.1s ease-in-out;
+    }
+    /* ==================================================== */
+    
     @media (max-width: 480px) {
       .container {       
         width: 360px;
         max-width: 90%;
         padding: 30px;
       }
-      /* Vous pouvez retirer ou adapter cette règle si elle n'est plus nécessaire */
       #overlay {
         top: 85px !important;
         left: 50% !important;
@@ -444,7 +524,6 @@
       .again {
         display: block;
         margin: 0 auto 0px;
-		
       }
       @keyframes windmillShake {
         0% { transform: rotate(0deg); }
@@ -457,7 +536,7 @@
         100% { transform: rotate(0deg); }
       }
       .windmill-shake {
-         animation: windmillShake 0.8s ease-in-out forwards !important;
+        animation: windmillShake 0.8s ease-in-out forwards !important;
         transform-origin: center;
       }
       .raised {
@@ -495,95 +574,21 @@
       @media (max-width: 480px) {      
         #result-header {
           display: block;
-          margin: 0 auto 20px;
+          margin: 0 auto 50px !important;
           width: 85%;
         }
       }
-      @media (max-width: 480px) {      
-        .decor-right {
-          width: 80px;
-          transform: translate(-20px, -5px);
-          z-index: 0;
-          padding: 12px 0px;
-
-        }
-      }
-      @media (max-width: 480px) {      
-        .decor-left {
-          width: 80px;
-          transform: translate(20px, -5px);
-          z-index: 0;
-          padding: 12px 0px;
-
-        }
-      }
-      @media (max-width: 480px) {      
-        .decor-rightX {
-          width: 80px;
-          transform: translate(-30px, 0px);
-          z-index: 0;
-          padding: 12px 0px;
-        }
-      }
-      @media (max-width: 480px) {      
-        .decor-leftX {
-          width: 80px;
-          transform: translate(30px, 0px);
-          z-index: 0;
-          padding: 12px 0px;
-        }
-      }
-
       @media (max-width: 480px) {
-        .floating-title {
-          margin-top: -10px; /* Ajustez selon le rendu souhaité */
-		  margin-bottom: 15px;
-
+        #final-score {
+          font-size: 28px !important;
         }
       }
- @media (max-width: 480px) {
- @keyframes levitateLeft {
-        0%   { transform: translate(20px, 0px); }
-        50%  { transform: translate(20px, -15px); } /* monte de 10px */
-        100% { transform: translate(20px, 0px); }
-      }
-      @keyframes levitateRight {
-        0%   { transform: translate(-20px, 0px); }
-        50%  { transform: translate(-20px, -15px); } /* monte de 10px */
-        100% { transform: translate(-20px, 0px); }
-      }
-}
- @media (max-width: 480px) {
-@keyframes levitateLeftX {
-  0%   { transform: translate(20px, 3px); }
-  50%  { transform: translate(20px, 13px); }
-  100% { transform: translate(20px, 3px); }
-}
- @media (max-width: 480px) {
-@keyframes levitateRightX {
-  0%   { transform: translate(-20px, 3px); }
-  50%  { transform: translate(-20px, 13px); }
-  100% { transform: translate(-20px, 3px); }
-}
-}
-.centipod {
-  display: block;
-  margin: 0 auto;
-}
-.vidget {
-  display: block;
-  margin: 0 auto;
-}
-@media (max-width: 480px) {
-  #question-text { font-size: 22px; }
-}
-@media (max-width: 480px) {	  
-  #result-header {
-    display: block;
-    margin: 0 auto 50px !important; /* Augmente la marge inférieure */
-    width: 85%;
+  @media (max-width: 480px) {
+  #quiz-container {
+    max-height: 80vh; /* 80% de la hauteur de l'écran */
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
   }
-}
+}	  
   </style>
 </head>
 <body>
@@ -600,14 +605,19 @@
   <div class="container" id="home">
     <!-- Titre centré -->
     <img src="images/titre.png" alt="quiz ssiap1" class="floating-title">
-<img src="images/vidget.gif" alt="videx" class="vidget" style="display: block; margin: 40px auto; position: relative; top: -30px;">
+    <img src="images/vidget.gif" alt="videx" class="vidget" style="display: block; margin: 40px auto; position: relative; top: -30px;">
     <!-- Image décorative centrée -->
     <img src="images/decor.gif" alt="pik" class="pikachu" style="display: none; z-index: 3;">
-    <!-- Image GBC en tant qu'image normale (non overlay) -->
-<img src="images/GBC.png" alt="GBC" style="display: none; margin: -200px auto 0 auto; border: 3px solid black; width: 290px; height: auto; position: relative; z-index: 2;">
-    <!-- Bouton mute et bouton start… -->
-    <img id="mute-btn" src="images/mute-off.gif" alt="Son activé" style="cursor: pointer; width: 30px; height: 25px; margin-bottom: 20px; margin-top: 25px;">
+    <!-- Image GBC (non overlay) -->
+    <img src="images/GBC.png" alt="GBC" style="display: none; margin: -200px auto 0 auto; border: 3px solid black; width: 290px; height: auto; position: relative; z-index: 2;">
+    <!-- Bouton mute, bouton start et bouton INDEX (petit) -->
+    <div class="mute-wrapper" style="position: relative; display: inline-block; text-align: center;">
+    <img id="mute-btn" src="images/mute-off.gif" alt="Son activé" style="cursor: pointer; width: 30px; height: 25px; margin: 10px auto; display: block;">
+    <img id="additional-image" src="images/diez.png" alt="Nouvelle image" 
+         style="position: absolute; right: -120px; top: 50%; transform: translateY(-50%); cursor: pointer; width: 60px;">
+  </div>
     <button id="start-btn"><img src="images/start.png" style="margin-bottom: -30px; width: 120px"></button>
+    <button id="home-index-btn">INDEX</button>
   </div>
   
   <!-- Zone du quiz -->
@@ -627,38 +637,482 @@
     <img id="final-image" src="images/lose1.gif" alt="Résultat" style="width:120px; display:block; margin: -15px auto 20px;">
     <p id="final-score">Score : 0 sur 3</p>
     <button id="restart-btn" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 3px 3px 5px black;">RECOMMENCER</button>
+    <!-- Bouton INDEX ajouté sur la page de résultats -->
+    <button id="result-index-btn">INDEX</button>
+  </div>
+  
+  <!-- Modal INDEX -->
+  <div id="index-modal">
+    <button class="index-option" data-url="https://remi-mason.github.io/quiz-2/">1</button>
+    <button class="index-option" data-url="https://remi-mason.github.io/quiz-2-2/">2</button>
+    <button class="index-option" data-url="https://remi-mason.github.io/quiz-2-3/">3</button>
+    <button class="index-option" data-url="https://remi-mason.github.io/quiz-2-4/">4</button>
+    <br>
+    <button id="close-index-modal">Fermer</button>
   </div>
   
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  var decorImage = document.querySelector('.pikachu');
-  if (decorImage) {
-    decorImage.src = "images/decor1.gif";
-    decorImage.style.width = "235px";
-    setTimeout(function(){
-       decorImage.src = "images/decor2.gif";
-       decorImage.style.width = "235px";
-    }, 5000);
-  }
-});
+    // (Code JavaScript existant inchangé sauf ajout des écouteurs pour le bouton INDEX sur la page de résultats)
+    document.addEventListener("DOMContentLoaded", function() {
+      var decorImage = document.querySelector('.pikachu');
+      if (decorImage) {
+        decorImage.src = "images/decor1.gif";
+        decorImage.style.width = "235px";
+        setTimeout(function(){
+          decorImage.src = "images/decor2.gif";
+          decorImage.style.width = "235px";
+        }, 5000);
+      }
+    });
+    
     // Données du quiz
     const quizData = [
-      {
-        question: "Sur quel feu peut-on utiliser un extincteur à eau pulvérisée avec additif ?",
-        options: ["Feu de classe A", "Feu de classe B", "Feu de classe C", "Feu de classe D"],
-        correctAnswers: ["Feu de classe A", "Feu de classe B"]
-      },
-      {
-        question: "Que signifie le signal d'alarme incendie ?",
-        options: ["Évacuation immédiate", "Appeler le service incendie", "Rester à votre poste", "Ignorer le signal"],
-        correctAnswers: ["Évacuation immédiate"]
-      },
-      {
-        question: "Quel équipement de sécurité incendie est obligatoire dans un établissement ?",
-        options: ["Extincteur", "Détecteur de fumée", "Réseau d'alarme", "Toutes les réponses"],
-        correctAnswers: ["Toutes les réponses"]
-      }
+ {
+      "question": "Comment un ERP doit-il être desservi?",
+      "propositions": [
+        "Par des voies-engins",
+        "Par des voies-échelles",
+        "Par des espaces libres",
+        "Par une seule voie d'accès",
+        "Uniquement par un parking",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Par des voies-engins",
+        "Par des voies-échelles",
+        "Par des espaces libres"
+      ]
+    },
+    {
+      "question": "Qu'est-ce que la voie dans un ERP?",
+      "propositions": [
+        "L'espace entre deux façades d’immeubles",
+        "La chaussée utilisée par les véhicules",
+        "Un espace exclusivement réservé aux piétons",
+        "Un accès interdit aux secours",
+        "Un passage couvert obligatoire",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "L'espace entre deux façades d’immeubles"
+      ]
+    },
+    {
+      "question": "Quels éléments font partie des voies d’accès carrossables?",
+      "propositions": [
+        "Les voies engins",
+        "Les voies échelles",
+        "Les espaces libres",
+        "Les voies réservées aux piétons",
+        "Les zones commerciales",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Les voies engins",
+        "Les voies échelles",
+        "Les espaces libres"
+      ]
+    },
+    {
+      "question": "Quelle est la largeur minimale d'une voie engins?",
+      "propositions": [
+        "6 mètres",
+        "7 mètres",
+        "8 mètres",
+        "10 mètres",
+        "12 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "8 mètres"
+      ]
+    },
+    {
+      "question": "Pourquoi les voies engins sont-elles nécessaires?",
+      "propositions": [
+        "Pour le stationnement des véhicules de secours",
+        "Pour permettre l’approche des secours",
+        "Pour le passage des piétons",
+        "Pour le stationnement du public",
+        "Pour séparer les voies de circulation",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Pour le stationnement des véhicules de secours",
+        "Pour permettre l’approche des secours"
+      ]
+    },
+    {
+      "question": "Quelle est la largeur minimale utilisable d’une voie engins?",
+      "propositions": [
+        "3 mètres",
+        "5 mètres",
+        "6 mètres",
+        "8 mètres",
+        "10 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "3 mètres"
+      ]
+    },
+    {
+      "question": "Quelle est la force portante minimale d’une voie engins?",
+      "propositions": [
+        "100 kilonewtons",
+        "120 kilonewtons",
+        "140 kilonewtons",
+        "160 kilonewtons",
+        "180 kilonewtons",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "160 kilonewtons"
+      ]
+    },
+    {
+      "question": "Quelle est la hauteur libre sous obstacle minimale pour une voie engins?",
+      "propositions": [
+        "3,5 mètres",
+        "4 mètres",
+        "4,5 mètres",
+        "5 mètres",
+        "5,5 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "4 mètres"
+      ]
+    },
+    {
+      "question": "Quelle est la pente maximale d'une voie engins?",
+      "propositions": [
+        "10%",
+        "12%",
+        "15%",
+        "18%",
+        "20%",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "15%"
+      ]
+    },
+{
+  "questions": [
+    {
+      "question": "Quelle est la largeur minimale sous obstacle pour une voie engins?",
+      "propositions": [
+        "3 mètres",
+        "3,5 mètres",
+        "4 mètres",
+        "4,5 mètres",
+        "5 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "4 mètres"
+      ]
+    },
+    {
+      "question": "Quelle doit être la résistance du revêtement de la chaussée pour une voie engins?",
+      "propositions": [
+        "80 N/cm²",
+        "100 N/cm²",
+        "120 N/cm²",
+        "140 N/cm²",
+        "160 N/cm²",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "80 N/cm²"
+      ]
+    },
+    {
+      "question": "Quel est le rayon minimal d’un virage sur une voie engins?",
+      "propositions": [
+        "5 mètres",
+        "10 mètres",
+        "15 mètres",
+        "20 mètres",
+        "25 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "15 mètres"
+      ]
+    },
+    {
+      "question": "À quelle distance doit être prévu un élargissement pour les manœuvres si la voie est inférieure à 8 mètres?",
+      "propositions": [
+        "Tous les 20 mètres",
+        "Tous les 30 mètres",
+        "Tous les 40 mètres",
+        "Tous les 50 mètres",
+        "Tous les 60 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Tous les 50 mètres"
+      ]
+    },
+  {
+  "questions": [
+    {
+      "question": "Dans quel cas une voie échelle est-elle obligatoire?",
+      "propositions": [
+        "Lorsque le PBDN est à plus de 8 mètres du sol",
+        "Lorsque le bâtiment a plus de 3 étages",
+        "Si le bâtiment accueille plus de 500 personnes",
+        "Quand il n'y a pas d'accès piéton",
+        "Quand la voirie est inférieure à 6 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Lorsque le PBDN est à plus de 8 mètres du sol"
+      ]
+    },
+    {
+      "question": "Quelle est la largeur minimale d'une voie échelle?",
+      "propositions": [
+        "3 mètres",
+        "3,5 mètres",
+        "4 mètres",
+        "4,5 mètres",
+        "5 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "4 mètres"
+      ]
+    },
+    {
+      "question": "Quelles sont les caractéristiques minimales d'une voie échelle?",
+      "propositions": [
+        "Largeur de 4 mètres",
+        "Longueur de 10 mètres",
+        "Pente maximale de 10%",
+        "Hauteur sous obstacle de 3 mètres",
+        "Force portante de 200 kilonewtons",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Largeur de 4 mètres",
+        "Longueur de 10 mètres",
+        "Pente maximale de 10%"
+      ]
+    },
+	 {
+      "question": "Quel est le rôle des espaces libres desservant une façade?",
+      "propositions": [
+        "Permettre la mise en œuvre des engins de secours",
+        "Faciliter l'accès aux bâtiments situés en impasse",
+        "Améliorer la circulation des piétons",
+        "Offrir une zone de stationnement pour les secours",
+        "Réduire les nuisances sonores",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Permettre la mise en œuvre des engins de secours",
+        "Faciliter l'accès aux bâtiments situés en impasse"
+      ]
+    },
+    {
+      "question": "Quelle est la plus petite dimension minimale d’un espace libre?",
+      "propositions": [
+        "6 mètres",
+        "7 mètres",
+        "8 mètres",
+        "9 mètres",
+        "10 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "8 mètres"
+      ]
+    },
+    {
+      "question": "Quelle condition doit respecter un espace libre?",
+      "propositions": [
+        "Ne pas contenir d'obstacle gênant l'écoulement du public",
+        "Avoir une largeur de 5 mètres minimum",
+        "Être recouvert de bitume",
+        "Avoir une pente maximale de 15%",
+        "Être adjacent à un parking",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Ne pas contenir d'obstacle gênant l'écoulement du public"
+      ]
+    },
+    {
+      "question": "Quelle est la distance maximale entre un espace libre et une voie engins?",
+      "propositions": [
+        "30 mètres",
+        "40 mètres",
+        "50 mètres",
+        "60 mètres",
+        "70 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "60 mètres"
+      ]
+    },
+    {
+      "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait plus de 8 mètres?",
+      "propositions": [
+        "1,50 mètre",
+        "1,80 mètre",
+        "2 mètres",
+        "2,50 mètres",
+        "3 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "3 mètres"
+      ]
+    },
+    {
+      "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait 8 mètres ou moins?",
+      "propositions": [
+        "1,50 mètre",
+        "1,80 mètre",
+        "2 mètres",
+        "2,50 mètres",
+        "3 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "1,80 mètre"
+      ]
+    },
+    {
+      "question": "Dans quel cas un espace libre doit-il respecter des exigences supplémentaires?",
+      "propositions": [
+        "Si le plancher bas du dernier niveau est à plus de 8 mètres",
+        "Si le bâtiment comporte plus de 5 étages",
+        "Si le bâtiment accueille plus de 300 personnes",
+        "Si l'espace libre est en zone urbaine",
+        "Si l'espace libre est en pente",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Si le plancher bas du dernier niveau est à plus de 8 mètres"
+      ]
+    },
+    {
+      "question": "Quels critères doivent être respectés pour assurer l'accès aux secours?",
+      "propositions": [
+        "Accès facile aux matériels de lutte contre le feu",
+        "Présence d'un marquage au sol spécifique",
+        "Pas d'obstacle empêchant les manœuvres",
+        "Un éclairage spécifique la nuit",
+        "Une signalisation visible",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Accès facile aux matériels de lutte contre le feu",
+        "Pas d'obstacle empêchant les manœuvres"
+      ]
+    },
+    {
+      "question": "Que doit indiquer le panneau de signalisation présent en permanence sur les espaces libres?",
+      "propositions": [
+        "Le sens de circulation",
+        "Le tonnage limite autorisé",
+        "Les horaires d'accès",
+        "Le numéro du service d'incendie",
+        "Le type d'ERP desservi",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Le tonnage limite autorisé"
+      ]
+    },
+    {
+      "question": "Comment sont traités les espaces libres en fonction de la hauteur du bâtiment?",
+      "propositions": [
+        "Comme des voies engins si la hauteur est inférieure à 8 mètres",
+        "Comme des voies échelles si la hauteur est supérieure à 8 mètres",
+        "Comme une zone piétonne",
+        "Comme une aire de stationnement",
+        "Comme une cour intérieure",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Comme des voies engins si la hauteur est inférieure à 8 mètres",
+        "Comme des voies échelles si la hauteur est supérieure à 8 mètres"
+      ]
+    },
+	    {
+      "question": "Comment un IGH doit-il être isolé des constructions voisines?",
+      "propositions": [
+        "Par une façade coupe-feu 2 heures sur toute sa hauteur",
+        "Par un volume de protection de 8 mètres",
+        "Par une distance minimale de 10 mètres",
+        "Par un mur en béton armé de 1 mètre d'épaisseur",
+        "Par une enceinte grillagée",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Par une façade coupe-feu 2 heures sur toute sa hauteur",
+        "Par un volume de protection de 8 mètres"
+      ]
+    },
+    {
+      "question": "Quelle est la distance minimale du volume de protection autour d'un IGH?",
+      "propositions": [
+        "5 mètres",
+        "6 mètres",
+        "7 mètres",
+        "8 mètres",
+        "10 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "8 mètres"
+      ]
+    },
+    {
+      "question": "Quels éléments doivent être dégagés dans le volume de protection d’un IGH?",
+      "propositions": [
+        "Tout élément combustible",
+        "Les véhicules en stationnement",
+        "Les installations électriques",
+        "Les végétaux",
+        "Les panneaux de signalisation",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "Tout élément combustible"
+      ]
+    },
+    {
+      "question": "Quelle est la hauteur minimale de passage sous voûte pour l'accès aux véhicules de secours?",
+      "propositions": [
+        "3 mètres",
+        "3,20 mètres",
+        "3,50 mètres",
+        "4 mètres",
+        "4,50 mètres",
+        "Aucune des réponses"
+      ],
+      "reponses": [
+        "3,50 mètres"
+      ]
+    }
     ];
+	  // Fonction de mélange (shuffle) avec l'algorithme Fisher-Yates
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Mélange des questions
+shuffleArray(quizData);
     
     let currentQuestion = 0;
     let score = 0;
@@ -702,15 +1156,15 @@
       }
     }
     muteBtn.addEventListener("click", muteToggleHandler);
-	document.addEventListener("DOMContentLoaded", function() {
-  var muteImg = document.getElementById("mute-btn");
-  if (muteImg && muteImg.src.indexOf(".gif") !== -1) {
-    var newMuteImg = muteImg.cloneNode(true);
-    newMuteImg.src = newMuteImg.src.split('?')[0] + '?t=' + new Date().getTime();
-    muteImg.parentNode.replaceChild(newMuteImg, muteImg);
-    newMuteImg.addEventListener("click", muteToggleHandler);
-  }
-});
+    document.addEventListener("DOMContentLoaded", function() {
+      var muteImg = document.getElementById("mute-btn");
+      if (muteImg && muteImg.src.indexOf(".gif") !== -1) {
+        var newMuteImg = muteImg.cloneNode(true);
+        newMuteImg.src = newMuteImg.src.split('?')[0] + '?t=' + new Date().getTime();
+        muteImg.parentNode.replaceChild(newMuteImg, muteImg);
+        newMuteImg.addEventListener("click", muteToggleHandler);
+      }
+    });
     
     // Démarrage du quiz
     startBtn.addEventListener("click", () => {
@@ -731,29 +1185,39 @@
     });
     
     // Affichage de la question
-    function showQuestion() {
-      resultDiv.innerHTML = "";
-      const data = quizData[currentQuestion];
-      questionCounterEl.textContent = `${currentQuestion + 1} / ${quizData.length}`;
-      questionTextEl.textContent = data.question;
-      optionsDiv.innerHTML = "";
-      data.options.forEach((option, index) => {
-        const div = document.createElement("div");
-        div.className = "option";
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.value = option;
-        checkbox.name = "option";
-        checkbox.id = `option_${index}`;
-        checkbox.addEventListener("click", () => { checkboxSound.currentTime = 0; checkboxSound.play(); });
-        const label = document.createElement("label");
-        label.htmlFor = `option_${index}`;
-        label.textContent = option;
-        div.appendChild(checkbox);
-        div.appendChild(label);
-        optionsDiv.appendChild(div);
-      });
-    }
+   function showQuestion() {
+  resultDiv.innerHTML = "";
+  validateBtn.style.display = "block";
+  const data = quizData[currentQuestion];
+  
+  // Cloner et mélanger les options
+  let options = data.options.slice(); // clone l'array d'options
+  shuffleArray(options); // mélange les options
+  
+  questionCounterEl.textContent = `${currentQuestion + 1} / ${quizData.length}`;
+  questionTextEl.textContent = data.question;
+  optionsDiv.innerHTML = "";
+  
+  options.forEach((option, index) => {
+    const div = document.createElement("div");
+    div.className = "option";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = option;
+    checkbox.name = "option";
+    checkbox.id = `option_${index}`;
+    checkbox.addEventListener("click", () => {
+      checkboxSound.currentTime = 0;
+      checkboxSound.play();
+    });
+    const label = document.createElement("label");
+    label.htmlFor = `option_${index}`;
+    label.textContent = option;
+    div.appendChild(checkbox);
+    div.appendChild(label);
+    optionsDiv.appendChild(div);
+  });
+}
     
     // Comparaison des tableaux
     function arraysEqual(a, b) {
@@ -767,55 +1231,91 @@
     validateBtn.addEventListener("click", () => {
       const data = quizData[currentQuestion];
       const selected = Array.from(document.querySelectorAll('input[name="option"]:checked')).map(el => el.value);
-      if (selected.length === 0) { alert("Veuillez sélectionner au moins une réponse"); return; }
+      if (selected.length === 0) { 
+        alert("Veuillez sélectionner au moins une réponse"); 
+        return; 
+      }
       const isCorrect = arraysEqual(selected, data.correctAnswers);
       validateBtn.style.display = "none";
+      
       if (isCorrect) {
         score++;
         correctSound.currentTime = 0;
         correctSound.play();
-        resultDiv.innerHTML = `
-          <div class="correct-container">
-            <img src="images/ryu.gif" alt="Décoration gauche" class="decor-left">
-            <img src="images/correct.png" alt="Bonne réponse" class="result-image correct">
-            <img src="images/ken.gif" alt="Décoration droite" class="decor-right">
-          </div>
-        `;
-        let ryuGif = document.querySelector('.decor-left');
-        let kenGif = document.querySelector('.decor-right');
-        if (ryuGif) { let originalSrc = ryuGif.src.split('?')[0]; ryuGif.src = originalSrc + '?t=' + new Date().getTime(); }
-        if (kenGif) { let originalSrc = kenGif.src.split('?')[0]; kenGif.src = originalSrc + '?t=' + new Date().getTime(); }
+        resultDiv.innerHTML = 
+          `<div class="correct-container">
+             <img src="images/ryu.gif" alt="Décoration gauche" class="decor-left">
+             <img src="images/correct.png" alt="Bonne réponse" class="result-image correct">
+             <img src="images/ken.gif" alt="Décoration droite" class="decor-right">
+           </div>`;
+        
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion < quizData.length) {
+            showQuestion();
+            validateBtn.style.display = "block";
+          } else {
+            showResultPage();
+          }
+        }, 1000);
+        
       } else {
         const selectedSound = (Math.random() < 0.5) ? incorrectSound : incorrectSound2;
         selectedSound.currentTime = 0;
         selectedSound.play();
-        resultDiv.innerHTML = `
-          <div class="incorrect-container">
-            <img src="images/ryu2.png" alt="Décoration gauche" class="decor-leftX">
-            <img src="images/incorrect.png" alt="Mauvaise réponse" class="result-image incorrect">
-            <img src="images/ken2.png" alt="Décoration droite" class="decor-rightX">
-          </div>
-          <div class="incorrect-answer-header">Réponse :</div>
-          <div class="incorrect-answer-text">${data.correctAnswers.join(", ")}</div>
-        `;
-        let ryu2Gif = document.querySelector('.decor-leftX');
-        let ken2Gif = document.querySelector('.decor-rightX');
-        if (ryu2Gif) { let originalSrc = ryu2Gif.src.split('?')[0]; ryu2Gif.src = originalSrc + '?t=' + new Date().getTime(); }
-        if (ken2Gif) { let originalSrc = ken2Gif.src.split('?')[0]; ken2Gif.src = originalSrc + '?t=' + new Date().getTime(); }
+        resultDiv.innerHTML = 
+          `<div class="incorrect-container">
+             <img src="images/ryu2.png" alt="Décoration gauche" class="decor-leftX">
+             <img src="images/incorrect.png" alt="Mauvaise réponse" class="result-image incorrect">
+             <img src="images/ken2.png" alt="Décoration droite" class="decor-rightX">
+           </div>
+           <div id="next-button-placeholder"></div>
+           <div class="incorrect-answer-header">Réponse :</div>
+           <div class="incorrect-answer-text">${data.correctAnswers.join(", ")}</div>`;
+        
+        setTimeout(() => {
+          const incorrectContainer = document.querySelector(".incorrect-container");
+          if (incorrectContainer) {
+            incorrectContainer.innerHTML = "";
+          }
+          
+          const nextPlaceholder = document.getElementById("next-button-placeholder");
+          if (nextPlaceholder) {
+            nextPlaceholder.style.marginBottom = "10px";
+            const nextBtn = document.createElement("button");
+            nextBtn.id = "next-btn";
+            nextBtn.textContent = "Suivant";
+            nextBtn.style.fontWeight = "bold";
+            nextBtn.style.margin = "0 auto";
+            nextBtn.style.marginTop = "30px";
+            nextBtn.style.display = "block";
+            nextBtn.style.padding = "15px 25px";
+            nextBtn.style.fontSize = "25px";
+            nextBtn.style.border = "3px solid #08ff08";
+            nextBtn.style.borderRadius = "10px";
+            nextBtn.style.backgroundColor = "#1a1d21";
+            nextBtn.style.color = "white";
+            nextBtn.style.cursor = "pointer";
+            nextBtn.style.transition = "transform 0.1s ease, box-shadow 0.1s ease";
+            nextBtn.style.animation = "borderGlow 2s ease-in-out infinite";
+            
+            nextPlaceholder.appendChild(nextBtn);
+            
+            nextBtn.addEventListener("click", () => {
+              nextBtn.remove();
+              currentQuestion++;
+              if (currentQuestion < quizData.length) {
+                showQuestion();
+                validateBtn.style.display = "block";
+              } else {
+                showResultPage();
+              }
+            });
+          }
+        }, 2000);
       }
-      const delayTime = isCorrect ? 2000 : 3000;
-      setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < quizData.length) {
-          showQuestion();
-          validateBtn.style.display = "block";
-        } else {
-          showResultPage();
-        }
-      }, delayTime);
     });
     
-    // Affichage de la page finale
     function showResultPage() {
       quizContainer.style.display = "none";
       resultPage.style.display = "block";
@@ -831,13 +1331,11 @@
         finalImage.classList.add("raised");
         finalImage.style.width = (window.innerWidth <= 480) ? "150px" : "190px";
         
-        // --- Ajout de l'overlay GIF de victoire ---
         if (!document.getElementById("confet-overlay")) {
           let overlay = document.createElement("img");
           overlay.id = "confet-overlay";
           overlay.src = "images/confet.gif"; 
           overlay.alt = "Overlay de victoire";
-          // Positionner l'overlay pour qu'il couvre tout le container
           overlay.style.position = "absolute";
           overlay.style.top = "0";
           overlay.style.left = "0";
@@ -864,30 +1362,75 @@
           resultHeader.classList.add("windmill-shake");
         }, 2800);
       }
-resultPage.style.backgroundSize = "cover";
-resultPage.style.backgroundPosition = "center";
-finalScoreEl.textContent = `Score : ${score} sur ${quizData.length}`;
-finalImage.src = (score === quizData.length)
-  ? "images/perfect.gif"
-  : ((Math.random() < 0.5) ? "images/lose1.gif" : "images/lose2.gif");
-
-// Appliquer une transformation spécifique si c'est lose1.gif sur mobile
-if (finalImage.src.indexOf("lose1.gif") !== -1 && window.innerWidth <= 480) {
-  finalImage.style.transform = "translateY(-10px)"; // remonter de 20px
-} else {
-  finalImage.style.transform = "";
-}
-
-if (score === quizData.length) {
-  document.getElementById("perfect-sound").currentTime = 0;
-  document.getElementById("perfect-sound").play();
-} else {
-  document.getElementById("imperfect-sound").currentTime = 0;
-  document.getElementById("imperfect-sound").play();
-}
-  }  
-    restartBtn.addEventListener("click", () => { window.location.reload(); });
+      resultPage.style.backgroundSize = "cover";
+      resultPage.style.backgroundPosition = "center";
+      finalScoreEl.textContent = `Score : ${score} sur ${quizData.length}`;
+      finalImage.src = (score === quizData.length)
+        ? "images/perfect.gif"
+        : ((Math.random() < 0.5) ? "images/lose1.gif" : "images/lose2.gif");
+      
+      if (finalImage.src.indexOf("lose1.gif") !== -1 && window.innerWidth <= 480) {
+        finalImage.style.transform = "translateY(-10px)";
+      } else {
+        finalImage.style.transform = "";
+      }
+      
+      if (score === quizData.length) {
+        document.getElementById("perfect-sound").currentTime = 0;
+        document.getElementById("perfect-sound").play();
+      } else {
+        document.getElementById("imperfect-sound").currentTime = 0;
+        document.getElementById("imperfect-sound").play();
+      }
+    }
     
+    restartBtn.addEventListener("click", () => { window.location.reload(); });
+    document.addEventListener("DOMContentLoaded", function() {
+      var vidget = document.querySelector('.vidget');
+      if (vidget) {
+        vidget.src = "images/vidget.gif?t=" + new Date().getTime();
+      }
+    });
+    
+    /* Gestion du modal INDEX pour les deux boutons */
+    document.addEventListener("DOMContentLoaded", function(){
+      const indexModal = document.getElementById("index-modal");
+      const closeIndexModal = document.getElementById("close-index-modal");
+      const homeIndexBtn = document.getElementById("home-index-btn");
+      const resultIndexBtn = document.getElementById("result-index-btn");
+      
+      if(homeIndexBtn){
+        homeIndexBtn.addEventListener("click", function(){
+          indexModal.style.display = "block";
+        });
+      }
+      
+      if(resultIndexBtn){
+        resultIndexBtn.addEventListener("click", function(){
+          indexModal.style.display = "block";
+        });
+      }
+      
+      if(closeIndexModal){
+        closeIndexModal.addEventListener("click", function(){
+          indexModal.style.display = "none";
+        });
+      }
+      
+      const indexOptions = document.querySelectorAll("#index-modal .index-option");
+      indexOptions.forEach(button => {
+        button.addEventListener("click", function(){
+          window.location.href = button.dataset.url;
+        });
+      });
+    });
+	  if (/Mobi|Android/i.test(navigator.userAgent)) {
+  window.addEventListener('beforeunload', function (e) {
+    // Certains navigateurs mobiles n'affichent pas de message personnalisé
+    e.preventDefault();
+    e.returnValue = "Attention, actualiser la page réinitialisera votre quiz. Êtes-vous sûr ?";
+  });
+}
   </script>
 </body>
 </html>
