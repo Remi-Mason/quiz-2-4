@@ -668,445 +668,437 @@ transform: translateY(-220px) scale(0.95);
     
     // Données du quiz
 const quizData = [
-{
-  "question": "Comment un ERP doit-il être desservi?",
-  "options": [
-    "Par des voies-engins",
-    "Par des voies-échelles",
-    "Par des espaces libres",
-    "Par une seule voie d'accès",
-    "Uniquement par un parking",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "Par des voies-engins",
-    "Par des voies-échelles",
-    "Par des espaces libres"
-  ]
-},
-{
-  "question": "Qu'est-ce que la voie dans un ERP?",
-  "options": [
-    "L'espace entre deux façades d’immeubles",
-    "La chaussée utilisée par les véhicules",
-    "Un espace exclusivement réservé aux piétons",
-    "Un accès interdit aux secours",
-    "Un passage couvert obligatoire",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "L'espace entre deux façades d’immeubles"
-  ]
-},
-{
-  "question": "Quels éléments font partie des voies d’accès carrossables?",
-  "options": [
-    "Les voies engins",
-    "Les voies échelles",
-    "Les espaces libres",
-    "Les voies réservées aux piétons",
-    "Les zones commerciales",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "Les voies engins",
-    "Les voies échelles",
-    "Les espaces libres"
-  ]
-},
-{
-  "question": "Quelle est la largeur minimale d'une voie engins?",
-  "options": [
-    "6 mètres",
-    "7 mètres",
-    "8 mètres",
-    "10 mètres",
-    "12 mètres",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "8 mètres"
-  ]
-},
-{
-  "question": "Pourquoi les voies engins sont-elles nécessaires?",
-  "options": [
-    "Pour le stationnement des véhicules de secours",
-    "Pour permettre l’approche des secours",
-    "Pour le passage des piétons",
-    "Pour le stationnement du public",
-    "Pour séparer les voies de circulation",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "Pour le stationnement des véhicules de secours",
-    "Pour permettre l’approche des secours"
-  ]
-},
-{
-  "question": "Quelle est la largeur minimale utilisable d’une voie engins?",
-  "options": [
-    "3 mètres",
-    "5 mètres",
-    "6 mètres",
-    "8 mètres",
-    "10 mètres",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "3 mètres"
-  ]
-},
-{
-  "question": "Quelle est la force portante minimale d’une voie engins?",
-  "options": [
-    "100 kilonewtons",
-    "120 kilonewtons",
-    "140 kilonewtons",
-    "160 kilonewtons",
-    "180 kilonewtons",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "160 kilonewtons"
-  ]
-},
-{
-  "question": "Quelle est la hauteur libre sous obstacle minimale pour une voie engins?",
-  "options": [
-    "3,5 mètres",
-    "4 mètres",
-    "4,5 mètres",
-    "5 mètres",
-    "5,5 mètres",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "4 mètres"
-  ]
-},
-{
-  "question": "Quelle est la pente maximale d'une voie engins?",
-  "options": [
-    "10%",
-    "12%",
-    "15%",
-    "18%",
-    "20%",
-    "Aucune des réponses"
-  ],
-  "correctAnswers": [
-    "15%"
-  ]
-},
-{
-  "question": [
-    {
-      "question": "Quelle est la largeur minimale sous obstacle pour une voie engins?",
-      "options": [
-        "3 mètres",
-        "3,5 mètres",
-        "4 mètres",
-        "4,5 mètres",
-        "5 mètres",
-        "Aucune des réponses"
-      ],
-      "correctAnswers": [
-        "4 mètres"
-      ]
-    },
-    {
-      "question": "Quelle doit être la résistance du revêtement de la chaussée pour une voie engins?",
-      "options": [
-        "80 N/cm²",
-        "100 N/cm²",
-        "120 N/cm²",
-        "140 N/cm²",
-        "160 N/cm²",
-        "Aucune des réponses"
-      ],
-      "correctAnswers": [
-        "80 N/cm²"
-      ]
-    },
-    {
-      "question": "Quel est le rayon minimal d’un virage sur une voie engins?",
-      "options": [
-        "5 mètres",
-        "10 mètres",
-        "15 mètres",
-        "20 mètres",
-        "25 mètres",
-        "Aucune des réponses"
-      ],
-      "correctAnswers": [
-        "15 mètres"
-      ]
-    },
-    {
-      "question": "À quelle distance doit être prévu un élargissement pour les manœuvres si la voie est inférieure à 8 mètres?",
-      "options": [
-        "Tous les 20 mètres",
-        "Tous les 30 mètres",
-        "Tous les 40 mètres",
-        "Tous les 50 mètres",
-        "Tous les 60 mètres",
-        "Aucune des réponses"
-      ],
-      "correctAnswers": [
-        "Tous les 50 mètres"
-      ]
-    },
-    {
-      "question": [
-        {
-          "question": "Dans quel cas une voie échelle est-elle obligatoire?",
-          "options": [
-            "Lorsque le PBDN est à plus de 8 mètres du sol",
-            "Lorsque le bâtiment a plus de 3 étages",
-            "Si le bâtiment accueille plus de 500 personnes",
-            "Quand il n'y a pas d'accès piéton",
-            "Quand la voirie est inférieure à 6 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Lorsque le PBDN est à plus de 8 mètres du sol"
-          ]
-        },
-        {
-          "question": "Quelle est la largeur minimale d'une voie échelle?",
-          "options": [
-            "3 mètres",
-            "3,5 mètres",
-            "4 mètres",
-            "4,5 mètres",
-            "5 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "4 mètres"
-          ]
-        },
-        {
-          "question": "Quelles sont les caractéristiques minimales d'une voie échelle?",
-          "options": [
-            "Largeur de 4 mètres",
-            "Longueur de 10 mètres",
-            "Pente maximale de 10%",
-            "Hauteur sous obstacle de 3 mètres",
-            "Force portante de 200 kilonewtons",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Largeur de 4 mètres",
-            "Longueur de 10 mètres",
-            "Pente maximale de 10%"
-          ]
-        },
-        {
-          "question": "Quel est le rôle des espaces libres desservant une façade?",
-          "options": [
-            "Permettre la mise en œuvre des engins de secours",
-            "Faciliter l'accès aux bâtiments situés en impasse",
-            "Améliorer la circulation des piétons",
-            "Offrir une zone de stationnement pour les secours",
-            "Réduire les nuisances sonores",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Permettre la mise en œuvre des engins de secours",
-            "Faciliter l'accès aux bâtiments situés en impasse"
-          ]
-        },
-        {
-          "question": "Quelle est la plus petite dimension minimale d’un espace libre?",
-          "options": [
-            "6 mètres",
-            "7 mètres",
-            "8 mètres",
-            "9 mètres",
-            "10 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "8 mètres"
-          ]
-        },
-        {
-          "question": "Quelle condition doit respecter un espace libre?",
-          "options": [
-            "Ne pas contenir d'obstacle gênant l'écoulement du public",
-            "Avoir une largeur de 5 mètres minimum",
-            "Être recouvert de bitume",
-            "Avoir une pente maximale de 15%",
-            "Être adjacent à un parking",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Ne pas contenir d'obstacle gênant l'écoulement du public"
-          ]
-        },
-        {
-          "question": "Quelle est la distance maximale entre un espace libre et une voie engins?",
-          "options": [
-            "30 mètres",
-            "40 mètres",
-            "50 mètres",
-            "60 mètres",
-            "70 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "60 mètres"
-          ]
-        },
-        {
-          "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait plus de 8 mètres?",
-          "options": [
-            "1,50 mètre",
-            "1,80 mètre",
-            "2 mètres",
-            "2,50 mètres",
-            "3 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "3 mètres"
-          ]
-        },
-        {
-          "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait 8 mètres ou moins?",
-          "options": [
-            "1,50 mètre",
-            "1,80 mètre",
-            "2 mètres",
-            "2,50 mètres",
-            "3 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "1,80 mètre"
-          ]
-        },
-        {
-          "question": "Dans quel cas un espace libre doit-il respecter des exigences supplémentaires?",
-          "options": [
-            "Si le plancher bas du dernier niveau est à plus de 8 mètres",
-            "Si le bâtiment comporte plus de 5 étages",
-            "Si le bâtiment accueille plus de 300 personnes",
-            "Si l'espace libre est en zone urbaine",
-            "Si l'espace libre est en pente",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Si le plancher bas du dernier niveau est à plus de 8 mètres"
-          ]
-        },
-        {
-          "question": "Quels critères doivent être respectés pour assurer l'accès aux secours?",
-          "options": [
-            "Accès facile aux matériels de lutte contre le feu",
-            "Présence d'un marquage au sol spécifique",
-            "Pas d'obstacle empêchant les manœuvres",
-            "Un éclairage spécifique la nuit",
-            "Une signalisation visible",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Accès facile aux matériels de lutte contre le feu",
-            "Pas d'obstacle empêchant les manœuvres"
-          ]
-        },
-        {
-          "question": "Que doit indiquer le panneau de signalisation présent en permanence sur les espaces libres?",
-          "options": [
-            "Le sens de circulation",
-            "Le tonnage limite autorisé",
-            "Les horaires d'accès",
-            "Le numéro du service d'incendie",
-            "Le type d'ERP desservi",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Le tonnage limite autorisé"
-          ]
-        },
-        {
-          "question": "Comment sont traités les espaces libres en fonction de la hauteur du bâtiment?",
-          "options": [
-            "Comme des voies engins si la hauteur est inférieure à 8 mètres",
-            "Comme des voies échelles si la hauteur est supérieure à 8 mètres",
-            "Comme une zone piétonne",
-            "Comme une aire de stationnement",
-            "Comme une cour intérieure",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Comme des voies engins si la hauteur est inférieure à 8 mètres",
-            "Comme des voies échelles si la hauteur est supérieure à 8 mètres"
-          ]
-        },
-        {
-          "question": "Comment un IGH doit-il être isolé des constructions voisines?",
-          "options": [
-            "Par une façade coupe-feu 2 heures sur toute sa hauteur",
-            "Par un volume de protection de 8 mètres",
-            "Par une distance minimale de 10 mètres",
-            "Par un mur en béton armé de 1 mètre d'épaisseur",
-            "Par une enceinte grillagée",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Par une façade coupe-feu 2 heures sur toute sa hauteur",
-            "Par un volume de protection de 8 mètres"
-          ]
-        },
-        {
-          "question": "Quelle est la distance minimale du volume de protection autour d'un IGH?",
-          "options": [
-            "5 mètres",
-            "6 mètres",
-            "7 mètres",
-            "8 mètres",
-            "10 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "8 mètres"
-          ]
-        },
-        {
-          "question": "Quels éléments doivent être dégagés dans le volume de protection d’un IGH?",
-          "options": [
-            "Tout élément combustible",
-            "Les véhicules en stationnement",
-            "Les installations électriques",
-            "Les végétaux",
-            "Les panneaux de signalisation",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "Tout élément combustible"
-          ]
-        },
-        {
-          "question": "Quelle est la hauteur minimale de passage sous voûte pour l'accès aux véhicules de secours?",
-          "options": [
-            "3 mètres",
-            "3,20 mètres",
-            "3,50 mètres",
-            "4 mètres",
-            "4,50 mètres",
-            "Aucune des réponses"
-          ],
-          "correctAnswers": [
-            "3,50 mètres"
-          ]
-        }
-      ]
-    }
-  ]
-}
+  {
+    "question": "Comment un ERP doit-il être desservi?",
+    "options": [
+      "Par des voies-engins",
+      "Par des voies-échelles",
+      "Par des espaces libres",
+      "Par une seule voie d'accès",
+      "Uniquement par un parking",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Par des voies-engins",
+      "Par des voies-échelles",
+      "Par des espaces libres"
+    ]
+  },
+  {
+    "question": "Qu'est-ce que la voie dans un ERP?",
+    "options": [
+      "L'espace entre deux façades d’immeubles",
+      "La chaussée utilisée par les véhicules",
+      "Un espace exclusivement réservé aux piétons",
+      "Un accès interdit aux secours",
+      "Un passage couvert obligatoire",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "L'espace entre deux façades d’immeubles"
+    ]
+  },
+  {
+    "question": "Quels éléments font partie des voies d’accès carrossables?",
+    "options": [
+      "Les voies engins",
+      "Les voies échelles",
+      "Les espaces libres",
+      "Les voies réservées aux piétons",
+      "Les zones commerciales",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Les voies engins",
+      "Les voies échelles",
+      "Les espaces libres"
+    ]
+  },
+  {
+    "question": "Quelle est la largeur minimale d'une voie engins?",
+    "options": [
+      "6 mètres",
+      "7 mètres",
+      "8 mètres",
+      "10 mètres",
+      "12 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "8 mètres"
+    ]
+  },
+  {
+    "question": "Pourquoi les voies engins sont-elles nécessaires?",
+    "options": [
+      "Pour le stationnement des véhicules de secours",
+      "Pour permettre l’approche des secours",
+      "Pour le passage des piétons",
+      "Pour le stationnement du public",
+      "Pour séparer les voies de circulation",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Pour le stationnement des véhicules de secours",
+      "Pour permettre l’approche des secours"
+    ]
+  },
+  {
+    "question": "Quelle est la largeur minimale utilisable d’une voie engins?",
+    "options": [
+      "3 mètres",
+      "5 mètres",
+      "6 mètres",
+      "8 mètres",
+      "10 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "3 mètres"
+    ]
+  },
+  {
+    "question": "Quelle est la force portante minimale d’une voie engins?",
+    "options": [
+      "100 kilonewtons",
+      "120 kilonewtons",
+      "140 kilonewtons",
+      "160 kilonewtons",
+      "180 kilonewtons",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "160 kilonewtons"
+    ]
+  },
+  {
+    "question": "Quelle est la hauteur libre sous obstacle minimale pour une voie engins?",
+    "options": [
+      "3,5 mètres",
+      "4 mètres",
+      "4,5 mètres",
+      "5 mètres",
+      "5,5 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "4 mètres"
+    ]
+  },
+  {
+    "question": "Quelle est la pente maximale d'une voie engins?",
+    "options": [
+      "10%",
+      "12%",
+      "15%",
+      "18%",
+      "20%",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "15%"
+    ]
+  },
+  {
+    "question": "Quelle est la largeur minimale sous obstacle pour une voie engins?",
+    "options": [
+      "3 mètres",
+      "3,5 mètres",
+      "4 mètres",
+      "4,5 mètres",
+      "5 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "4 mètres"
+    ]
+  },
+  {
+    "question": "Quelle doit être la résistance du revêtement de la chaussée pour une voie engins?",
+    "options": [
+      "80 N/cm²",
+      "100 N/cm²",
+      "120 N/cm²",
+      "140 N/cm²",
+      "160 N/cm²",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "80 N/cm²"
+    ]
+  },
+  {
+    "question": "Quel est le rayon minimal d’un virage sur une voie engins?",
+    "options": [
+      "5 mètres",
+      "10 mètres",
+      "15 mètres",
+      "20 mètres",
+      "25 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "15 mètres"
+    ]
+  },
+  {
+    "question": "À quelle distance doit être prévu un élargissement pour les manœuvres si la voie est inférieure à 8 mètres?",
+    "options": [
+      "Tous les 20 mètres",
+      "Tous les 30 mètres",
+      "Tous les 40 mètres",
+      "Tous les 50 mètres",
+      "Tous les 60 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Tous les 50 mètres"
+    ]
+  },
+  {
+    "question": "Dans quel cas une voie échelle est-elle obligatoire?",
+    "options": [
+      "Lorsque le PBDN est à plus de 8 mètres du sol",
+      "Lorsque le bâtiment a plus de 3 étages",
+      "Si le bâtiment accueille plus de 500 personnes",
+      "Quand il n'y a pas d'accès piéton",
+      "Quand la voirie est inférieure à 6 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Lorsque le PBDN est à plus de 8 mètres du sol"
+    ]
+  },
+  {
+    "question": "Quelle est la largeur minimale d'une voie échelle?",
+    "options": [
+      "3 mètres",
+      "3,5 mètres",
+      "4 mètres",
+      "4,5 mètres",
+      "5 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "4 mètres"
+    ]
+  },
+  {
+    "question": "Quelles sont les caractéristiques minimales d'une voie échelle?",
+    "options": [
+      "Largeur de 4 mètres",
+      "Longueur de 10 mètres",
+      "Pente maximale de 10%",
+      "Hauteur sous obstacle de 3 mètres",
+      "Force portante de 200 kilonewtons",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Largeur de 4 mètres",
+      "Longueur de 10 mètres",
+      "Pente maximale de 10%"
+    ]
+  },
+  {
+    "question": "Quel est le rôle des espaces libres desservant une façade?",
+    "options": [
+      "Permettre la mise en œuvre des engins de secours",
+      "Faciliter l'accès aux bâtiments situés en impasse",
+      "Améliorer la circulation des piétons",
+      "Offrir une zone de stationnement pour les secours",
+      "Réduire les nuisances sonores",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Permettre la mise en œuvre des engins de secours",
+      "Faciliter l'accès aux bâtiments situés en impasse"
+    ]
+  },
+  {
+    "question": "Quelle est la plus petite dimension minimale d’un espace libre?",
+    "options": [
+      "6 mètres",
+      "7 mètres",
+      "8 mètres",
+      "9 mètres",
+      "10 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "8 mètres"
+    ]
+  },
+  {
+    "question": "Quelle condition doit respecter un espace libre?",
+    "options": [
+      "Ne pas contenir d'obstacle gênant l'écoulement du public",
+      "Avoir une largeur de 5 mètres minimum",
+      "Être recouvert de bitume",
+      "Avoir une pente maximale de 15%",
+      "Être adjacent à un parking",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Ne pas contenir d'obstacle gênant l'écoulement du public"
+    ]
+  },
+  {
+    "question": "Quelle est la distance maximale entre un espace libre et une voie engins?",
+    "options": [
+      "30 mètres",
+      "40 mètres",
+      "50 mètres",
+      "60 mètres",
+      "70 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "60 mètres"
+    ]
+  },
+  {
+    "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait plus de 8 mètres?",
+    "options": [
+      "1,50 mètre",
+      "1,80 mètre",
+      "2 mètres",
+      "2,50 mètres",
+      "3 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "3 mètres"
+    ]
+  },
+  {
+    "question": "Quelle largeur minimale doit avoir l'accès depuis une voie engins si le bâtiment fait 8 mètres ou moins?",
+    "options": [
+      "1,50 mètre",
+      "1,80 mètre",
+      "2 mètres",
+      "2,50 mètres",
+      "3 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "1,80 mètre"
+    ]
+  },
+  {
+    "question": "Dans quel cas un espace libre doit-il respecter des exigences supplémentaires?",
+    "options": [
+      "Si le plancher bas du dernier niveau est à plus de 8 mètres",
+      "Si le bâtiment comporte plus de 5 étages",
+      "Si le bâtiment accueille plus de 300 personnes",
+      "Si l'espace libre est en zone urbaine",
+      "Si l'espace libre est en pente",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Si le plancher bas du dernier niveau est à plus de 8 mètres"
+    ]
+  },
+  {
+    "question": "Quels critères doivent être respectés pour assurer l'accès aux secours?",
+    "options": [
+      "Accès facile aux matériels de lutte contre le feu",
+      "Présence d'un marquage au sol spécifique",
+      "Pas d'obstacle empêchant les manœuvres",
+      "Un éclairage spécifique la nuit",
+      "Une signalisation visible",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Accès facile aux matériels de lutte contre le feu",
+      "Pas d'obstacle empêchant les manœuvres"
+    ]
+  },
+  {
+    "question": "Que doit indiquer le panneau de signalisation présent en permanence sur les espaces libres?",
+    "options": [
+      "Le sens de circulation",
+      "Le tonnage limite autorisé",
+      "Les horaires d'accès",
+      "Le numéro du service d'incendie",
+      "Le type d'ERP desservi",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Le tonnage limite autorisé"
+    ]
+  },
+  {
+    "question": "Comment sont traités les espaces libres en fonction de la hauteur du bâtiment?",
+    "options": [
+      "Comme des voies engins si la hauteur est inférieure à 8 mètres",
+      "Comme des voies échelles si la hauteur est supérieure à 8 mètres",
+      "Comme une zone piétonne",
+      "Comme une aire de stationnement",
+      "Comme une cour intérieure",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Comme des voies engins si la hauteur est inférieure à 8 mètres",
+      "Comme des voies échelles si la hauteur est supérieure à 8 mètres"
+    ]
+  },
+  {
+    "question": "Comment un IGH doit-il être isolé des constructions voisines?",
+    "options": [
+      "Par une façade coupe-feu 2 heures sur toute sa hauteur",
+      "Par un volume de protection de 8 mètres",
+      "Par une distance minimale de 10 mètres",
+      "Par un mur en béton armé de 1 mètre d'épaisseur",
+      "Par une enceinte grillagée",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Par une façade coupe-feu 2 heures sur toute sa hauteur",
+      "Par un volume de protection de 8 mètres"
+    ]
+  },
+  {
+    "question": "Quelle est la distance minimale du volume de protection autour d'un IGH?",
+    "options": [
+      "5 mètres",
+      "6 mètres",
+      "7 mètres",
+      "8 mètres",
+      "10 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "8 mètres"
+    ]
+  },
+  {
+    "question": "Quels éléments doivent être dégagés dans le volume de protection d’un IGH?",
+    "options": [
+      "Tout élément combustible",
+      "Les véhicules en stationnement",
+      "Les installations électriques",
+      "Les végétaux",
+      "Les panneaux de signalisation",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "Tout élément combustible"
+    ]
+  },
+  {
+    "question": "Quelle est la hauteur minimale de passage sous voûte pour l'accès aux véhicules de secours?",
+    "options": [
+      "3 mètres",
+      "3,20 mètres",
+      "3,50 mètres",
+      "4 mètres",
+      "4,50 mètres",
+      "Aucune des réponses"
+    ],
+    "correctAnswers": [
+      "3,50 mètres"
+    ]
+  }
 ];
 
 	  // Fonction de mélange (shuffle) avec l'algorithme Fisher-Yates
