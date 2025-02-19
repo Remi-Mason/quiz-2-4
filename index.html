@@ -1182,14 +1182,14 @@ shuffleArray(quizData);
     });
     
     // Affichage de la question
-   function showQuestion() {
+  function showQuestion() {
   resultDiv.innerHTML = "";
   validateBtn.style.display = "block";
   const data = quizData[currentQuestion];
   
-  // Cloner et mélanger les options
-  let options = data.options.slice(); // clone l'array d'options
-  shuffleArray(options); // mélange les options
+  // Cloner et mélanger les options (ici, "propositions")
+  let options = data.propositions.slice(); // clone l'array de propositions
+  shuffleArray(options); // mélange les propositions
   
   questionCounterEl.textContent = `${currentQuestion + 1} / ${quizData.length}`;
   questionTextEl.textContent = data.question;
@@ -1215,7 +1215,6 @@ shuffleArray(quizData);
     optionsDiv.appendChild(div);
   });
 }
-    
     // Comparaison des tableaux
     function arraysEqual(a, b) {
       if (a.length !== b.length) return false;
@@ -1232,7 +1231,7 @@ shuffleArray(quizData);
         alert("Veuillez sélectionner au moins une réponse"); 
         return; 
       }
-      const isCorrect = arraysEqual(selected, data.correctAnswers);
+      const isCorrect = arraysEqual(selected, data.reponses);
       validateBtn.style.display = "none";
       
       if (isCorrect) {
